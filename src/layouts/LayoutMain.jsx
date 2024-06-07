@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
+// import useAuth from '../../hooks/useAuth';
 import { ConfigProvider, Drawer, Layout, Skeleton, Spin } from 'antd';
 import { Content, Header } from 'antd/es/layout/layout';
 import Sider from 'antd/es/layout/Sider';
 import MenuSider from './elements/MenuSider';
 
-import HeaderSide from './elements/HeaderSide';
-import Footer from 'components/global/Footer';
-import Profile from 'components/global/Profile';
+// import HeaderSide from './elements/HeaderSide';
+import Footer from './elements/Footer';
+// import Profile from 'components/global/Profile';
 
 const defaultDrawer = {
   open: false,
@@ -18,7 +18,11 @@ const defaultDrawer = {
 function LayoutMain(props) {
   const { children } = props;
 
-  const { isLoading, user } = useAuth();
+  // const { isLoading, user } = useAuth();
+  const isLoading = false
+  const user = {
+    type: 'administrador'
+  }
 
   const [hidden, setHidden] = useState(true);
 
@@ -39,12 +43,12 @@ function LayoutMain(props) {
     };
   }, []);
 
-  const openProfile = () => {
-    setDrawer({
-      open: true,
-      children: <Profile user={user} />,
-    });
-  };
+  // const openProfile = () => {
+  //   setDrawer({
+  //     open: true,
+  //     children: <Profile user={user} />,
+  //   });
+  // };
 
   if (isLoading) {
     return <Spin />;
@@ -70,11 +74,11 @@ function LayoutMain(props) {
         <ConfigProvider>
           <Layout className="min-h-screen ">
             <Header className="fixed shadow-md z-50 w-full h-16 px-1 md:px-5">
-              <HeaderSide
+              {/* <HeaderSide
                 hidden={hidden}
                 setHidden={setHidden}
                 openProfile={openProfile}
-              />
+              /> */}
             </Header>
             <Sider
               collapsible

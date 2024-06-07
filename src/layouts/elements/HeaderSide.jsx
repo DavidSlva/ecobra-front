@@ -2,7 +2,7 @@ import React from 'react';
 import { BarsOutlined } from '@ant-design/icons';
 import { Avatar, Button, Space } from 'antd';
 import useAuth from 'hooks/useAuth';
-import Logo from 'components/Logo/Logo';
+// import Logo from 'components/Logo/Logo';
 
 const HeaderSide = (props) => {
   const { hidden, setHidden, openProfile } = props;
@@ -17,7 +17,7 @@ const HeaderSide = (props) => {
           onClick={() => setHidden(!hidden)}
         />
       </div>
-      <Logo simple />
+      {/* <Logo simple /> */}
       <div
         className="basis-2/5 text-right cursor-pointer"
         onClick={openProfile}
